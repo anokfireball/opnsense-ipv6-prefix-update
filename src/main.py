@@ -8,7 +8,7 @@ SSL = os.environ["OPNSENSE_SSL"] == "true"
 BASE_URL = f"http{'s' if SSL else ''}://{HOST}:{PORT}"
 SESSION = requests.Session()
 SESSION.auth = (os.environ["OPNSENSE_KEY"], os.environ["OPNSENSE_SECRET"])
-SESSION.verify = os.environ["OPENSENSE_VERIFY_SSL"] == "true"
+SESSION.verify = os.environ["OPNSENSE_VERIFY_SSL"] == "true"
 
 IPV6_PREFIX_LENGTH = int(os.environ["IPV6_PREFIX_LENGTH"])
 if IPV6_PREFIX_LENGTH < 1 or int(IPV6_PREFIX_LENGTH) > 128:
