@@ -7,7 +7,7 @@ PORT = os.environ["OPNSENSE_PORT"]
 SSL = os.environ["OPNSENSE_SSL"] == "true"
 BASE_URL = f"http{'s' if SSL else ''}://{HOST}:{PORT}"
 SESSION = requests.Session()
-SESSION.auth = (os.environ["OPNSENSE_KEY"], os.environ["OPNSENSE_SECRET"])
+SESSION.auth = (os.environ["OPNSENSE_API_KEY"], os.environ["OPNSENSE_API_SECRET"])
 SESSION.verify = os.environ["OPNSENSE_VERIFY_SSL"] == "true"
 
 IPV6_PREFIX_LENGTH = int(os.environ["IPV6_PREFIX_LENGTH"])
